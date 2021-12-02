@@ -1,13 +1,119 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#root {
+  height: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+svg {
+  display: block;
+}
+
+input,
+select,
+button,
+textarea {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  display: none;
+}
+
+
+.slick-slider {
+  padding-bottom: 40px;
+}
+
+.slick-dots {
+  bottom: 10px !important;
+}
+
+.slick-arrow {
+  position: absolute !important;
+  width: auto !important;
+  height: auto !important;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media only screen and (max-width: 400px) {
+  .slick-arrow {
+    display: none !important;
+  }
+}
+
+.slick-prev {
+  left: -5px !important;
+  z-index: 1;
+}
+.slick-next {
+  right: -5px !important;
+}
+.slick-arrow:hover {
+  background: initial !important;
+  color: initial !important;
+}
+.slick-arrow::before {
+  content: "" !important;
+}
+
+.slick-slide {
+  padding: 10px;
+}
+
+.slick-slide > div  {
+  display: flex;
+  justify-content: center;
 }
