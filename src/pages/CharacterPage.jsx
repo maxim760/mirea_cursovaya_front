@@ -141,9 +141,9 @@ export const CharacterPage = () => {
               />
               <InfoCard
                 Icon={ParkIcon}
-                caption={"Парки"}
+                caption={"Выступления"}
                 list={item.parkAttractions}
-                emptyText={"Парков нет"}
+                emptyText={"Выступлений нет"}
                 hideOnEmpty
               />
               <InfoCard

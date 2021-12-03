@@ -12,23 +12,23 @@ export const CharacterListPage = () => {
 
   return (
     <Template>
-      <AppBar
-        position="fixed"
-        sx={{
-          bgcolor: 'primary.contrastText',
-          boxShadow: 0,
-          padding: "0 20px",
-          top: HEADER_HEIGHT + OFFSET_TOP + 'px',
-        }}
-        >
-        <Container>
-        <AppSearch
-          {...searchProps}
-          reset={resetQuery}
-          fullWidth
-        />
-        </Container>
-      </AppBar>
+      <Container>
+        <AppBar
+          position="fixed"
+          sx={{
+            bgcolor: 'primary.contrastText',
+            boxShadow: 0,
+            padding: "0 20px",
+            top: HEADER_HEIGHT + OFFSET_TOP + 'px',
+          }}
+          >
+          <AppSearch
+            {...searchProps}
+            reset={resetQuery}
+            fullWidth
+          />
+        </AppBar>
+      </Container>
       <CharacterList query={searchProps.value} sx={{ mt: OFFSET_TOP + 40 + 'px' }} />
     </Template>
   )

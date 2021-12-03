@@ -81,7 +81,6 @@ const AppNav = () => {
 const AppNavList = ({toggleDrawer}) => {
   const cl = useStyles()
   const location = useLocation()
-  console.log({location})
   return (
     <Box
       sx={{ width: 250 }}
@@ -91,18 +90,15 @@ const AppNavList = ({toggleDrawer}) => {
     >
       <List>
         {links.map(({ label, to, Icon }) => (
-          <li className={sx({ [cl.activeMenuItem]: location.pathname === to })}>
-            <ListItem button key={to}>
-              <ListItemIcon sx={{minWidth: 40}}>
-                <Icon />
-              </ListItemIcon>
-              <NavLink
-                key={to}
-                to={to}
-              >
+          <li key={to} className={sx({ [cl.activeMenuItem]: location.pathname === to })}>
+            <NavLink to={to}>
+              <ListItem button key={to}  >
+                <ListItemIcon sx={{minWidth: 40}}>
+                  <Icon />
+                </ListItemIcon>
                 {label}
-              </NavLink>
-            </ListItem>
+              </ListItem>
+            </NavLink>
           </li>
         ))}
       </List>

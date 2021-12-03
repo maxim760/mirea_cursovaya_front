@@ -44,17 +44,17 @@ export const PopularCharactersInfo = [
   },
   {
     title: "Плуто",
-    img: "https://cdn.disney.ru/assets/w1386/f7f78990-2c47-46c8-927c-a952e4f489bb.webp",
+    img: "https://i.pinimg.com/736x/7d/f6/ed/7df6edb21bbce60243f40667a18ee9aa--disney-marvel-disney-mickey.jpg",
     description: "Плуто, также называемый Плуто Пуп, является персонажем мультфильма, созданным в 1930 году в Walt Disney Productions. Он желто-оранжевого цвета, среднего размера, короткошерстная собака с черными ушами."
   },
   {
     title: "Винни-Пух",
-    img: "https://cdn.disney.ru/assets/w1386/b2580274-f381-4112-b024-75721528583e.webp",
+    img: "https://a.allegroimg.com/original/03db20/821b1e58460c9efeea71f9a83f0b/Naklejki-na-sciane-KUBUS-PUCHATEK-pokoj-dziecka",
     description: "Винни-Пух - персонаж, основанный на рассказах А. Милна «Винни-Пух». Франшиза СМИ Диснея началась в 1966 году с театрального короткого выпуска про Винни-Пуха и Медового дерева."
   },
   {
     title: "Белоснежка",
-    img: "https://cdn.disney.ru/assets/w1386/9f66ed11-e505-4d0f-b93a-5a7f3a746aea.webp",
+    img: "https://yt3.ggpht.com/ytc/AKedOLTzFCy40w-7eZM5U1jUrAmropqF9I3DNMw8Ch33=s900-c-k-c0x00ffffff-no-rj",
     description: "Белоснежка - вымышленный персонаж из первого фильма Walt Disney \"Белоснежка и Семемь гномов\". Она - первая и единственная Принцесса Walt Disney, которая имеет свою собственную звезду на Голливудской Аллее славы."
   },
   {
