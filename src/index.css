@@ -76,6 +76,12 @@ input[type='search']::-webkit-search-results-decoration {
   padding-bottom: 40px;
 }
 
+@media only screen and (max-width: 600px) {
+  .slick-slider {
+    padding-bottom: 0;
+  }
+}
+
 .slick-dots {
   bottom: 10px !important;
 }
@@ -99,6 +105,7 @@ input[type='search']::-webkit-search-results-decoration {
   z-index: 1;
 }
 .slick-next {
+  z-index: 1;
   right: -5px !important;
 }
 .slick-arrow:hover {

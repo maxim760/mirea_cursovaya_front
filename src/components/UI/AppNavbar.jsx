@@ -5,9 +5,8 @@ import StarIcon from '@material-ui/icons/StarOutline';
 import FavoriteIcon from '@material-ui/icons/FavoriteBorder';
 import SearchIcon from '@material-ui/icons/Search';
 import MenuIcon from '@material-ui/icons/Menu';
-import DashboardIcon from '@material-ui/icons/BarChart';
 import { makeStyles } from '@material-ui/styles'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom'
 import { ReactComponent as DisneyIcon } from '../../utils/assets/img/disney.svg'
 import { useWindowSize } from '../../utils/hooks'
 import { Routes } from '../../utils/paths'
@@ -56,7 +55,7 @@ const useStyles = makeStyles((theme) => {
 
 
 const links = [
-  { to: Routes.Favorites, label: 'Любимые персонажи', Icon: FavoriteIcon },
+  { to: Routes.Favorites, label: 'Любимые', Icon: FavoriteIcon },
   { to: Routes.Popular, label: 'Популярные', Icon: StarIcon },
   { to: Routes.Characters, label: 'Персонажи', Icon: SearchIcon },
   { to: Routes.About, label: 'О персонажах', Icon: InfoIcon },
@@ -149,14 +148,18 @@ export const AppNavbar = ({ }) => {
   const cl = useStyles()
   const { width } = useWindowSize()
   const isMobile = width < 800
+  const history = useHistory()
+  const goToCharacters = () => history.push(Routes.Characters)
   return (
     <AppBar position="fixed" sx={{ height: HEADER_HEIGHT_PX }}>
-        <Toolbar variant="dense" sx={{ ...flex.between, py: 1 }}>
-          <DisneyIcon
-            width={42}
-            height={42}
-            className={cl.icon}
-          />
+      <Toolbar variant="dense" sx={{ ...flex.between, py: 1 }}>
+          <IconButton onClick={goToCharacters}>
+            <DisneyIcon
+              width={42}
+              height={42}
+              className={cl.icon}
+            />
+          </IconButton>
           {isMobile ? <AppDrawer /> : <AppNav />}
         </Toolbar>
       </AppBar>

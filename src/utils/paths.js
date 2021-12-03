@@ -3,5 +3,4 @@ export const Routes = {
   About: '/about',
   Favorites: '/favorite',
   Popular: '/popular',
-  Dashboard: '/dashboard',
 }

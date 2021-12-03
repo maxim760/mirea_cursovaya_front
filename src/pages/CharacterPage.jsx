@@ -19,6 +19,7 @@ import { StorageKeys } from '../utils/constants'
 import { useTitle } from '../utils/hooks'
 import { InfoCard } from '../components/InfoCard/InfoCard'
 import { toImg } from '../utils/utilsFn'
+import { HEADER_HEIGHT, Template } from '../components'
 /* 
 allies: [] +
 createdAt: "2021-04-12T01:31:45.428Z"
@@ -39,7 +40,8 @@ const styles = {
   wrapper: {
     display: "flex",
     alignItems: "center",
-    flexDirection: "column"
+    flexDirection: "column",
+    padding: "10px",
   },
   loader: {
     position: "fixed",
@@ -77,7 +79,6 @@ export const CharacterPage = () => {
   useTitle(item?.name ? item.name  + " Дисней" : "Дисней")
   const [loading, setLoading] = useState(true)
   const history = useHistory()
-  console.log({item})
   useEffect(() => {
     (async () => {
       setLoading(true)
@@ -98,14 +99,15 @@ export const CharacterPage = () => {
     })()
   }, [])
   return (
-    <div className={styles.wrapper}>
+    <Template withBackBtn={!loading}>
+      <Box sx={styles.wrapper}>
       {loading ? (
         <Box sx={styles.loader}>
           <CircularProgress />
         </Box>
       ) : (
         <>
-          <Typography sx={{textAlign: "center"}} variant="h2">{item.name}</Typography>
+          <Typography sx={{textAlign: "center", px:"40px"}} variant="h2">{item.name}</Typography>
             <Box sx={styles.cards}>  
               <InfoCard
                 Icon={ArticleIcon}
@@ -163,7 +165,7 @@ export const CharacterPage = () => {
             color="default"
             size="medium"
             aria-label="add"
-            sx={{ position: "fixed", right: 16, top: 64 }}
+            sx={{ position: "fixed", right: 16, top: HEADER_HEIGHT + 16 }}
             onClick={toggleFavorite}
           >
             <Tooltip title={favoriteTitle}>
@@ -172,6 +174,7 @@ export const CharacterPage = () => {
           </Fab>
         </>
       )}
-    </div>
+    </Box>
+    </Template>
   )
 }

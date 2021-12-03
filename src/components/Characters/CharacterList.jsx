@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { matchSorter } from 'match-sorter'
-import { disneyApi } from '../../services/disneyApi'
 import { CharacterListWrapper } from './CharacterListWrapper'
 import {Box, Typography} from "@material-ui/core"
+import {useCharactersContext} from "../../utils/contexts/CharactersProvider"
 
 const DISNEY_KEYS = [
   'name',
@@ -13,21 +13,10 @@ const DISNEY_KEYS = [
   'parkAttractions',
 ]
 
-
 export const CharacterList = ({ query, ...wrapperProps }) => {
-  const [items, setItems] = useState([])
-  const [page, setPage] = useState(1)
-  const [total, setTotal] = useState(1)
-  const hasNextPage = total && page <= total
+  const {hasNextPage, fetchMoreItems, items} = useCharactersContext()
   const hasSearchValue = !!query.trim()
-  const fetchMoreItems = async () => {
-    try {
-      const items = await disneyApi.getAll({ page })
-      setPage((prev) => prev + 1)
-      setTotal(items.totalPages)
-      setItems((prev) => [...prev, ...items.data])
-    } catch (error) {}
-  }
+  
   useEffect(() => {
     fetchMoreItems()
   }, [])

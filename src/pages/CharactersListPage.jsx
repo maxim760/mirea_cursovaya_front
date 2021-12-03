@@ -1,17 +1,17 @@
 import React from 'react'
-import { AppBar } from '@material-ui/core'
-import { useChange, useTitle } from '../utils/hooks'
-import { AppSearch, HEADER_HEIGHT } from '../components'
+import { AppBar, Container } from '@material-ui/core'
+import { useTitle } from '../utils/hooks'
+import { AppSearch, HEADER_HEIGHT, Template } from '../components'
 import { CharacterList } from '../components/Characters/CharacterList'
+import { useCharactersContext } from '../utils/contexts/CharactersProvider'
 export const OFFSET_TOP = 8
 
-// todo для dark темы юзать switch (переключатель в header!!!)
 export const CharacterListPage = () => {
-  const { input: searchChar, reset } = useChange()
+  const {resetQuery, searchProps} = useCharactersContext()
   useTitle("Персонажи")
 
   return (
-    <>
+    <Template>
       <AppBar
         position="fixed"
         sx={{
@@ -20,14 +20,16 @@ export const CharacterListPage = () => {
           padding: "0 20px",
           top: HEADER_HEIGHT + OFFSET_TOP + 'px',
         }}
-      >
+        >
+        <Container>
         <AppSearch
-          {...searchChar}
-          reset={reset}
+          {...searchProps}
+          reset={resetQuery}
           fullWidth
         />
+        </Container>
       </AppBar>
-      <CharacterList query={searchChar.value} sx={{ mt: OFFSET_TOP + 40 + 'px' }} />
-    </>
+      <CharacterList query={searchProps.value} sx={{ mt: OFFSET_TOP + 40 + 'px' }} />
+    </Template>
   )
 }

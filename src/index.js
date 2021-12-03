@@ -8,14 +8,17 @@ import { theme } from './utils/theme'
 import './index.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { CharactersProvider } from './utils/contexts/CharactersProvider'
 
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <App />
+        <CharactersProvider>
+          <CssBaseline />
+          <App />
+        </CharactersProvider>
       </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,

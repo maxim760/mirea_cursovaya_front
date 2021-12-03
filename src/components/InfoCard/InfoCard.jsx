@@ -2,16 +2,14 @@ import React from 'react'
 import { Typography, Box } from '@material-ui/core'
 import {makeStyles} from "@material-ui/styles"
 import { ItemText } from './ItemText'
-// todo и подумать как с d3 сюда графиик вставить какие-нибудь
-// todo и для навигации кнопки назад поделать
-// todo страницу "о сайте сделать"
+
 const useStyles = makeStyles((theme) => ({
   wrapper: {
     padding: "20px",
     boxShadow: "0 0 10px rgba(0,0,0,0.6)",
     maxWidth: 600,
     width: "100%",
-    borderRadius: 8,
+    borderRadius: "8px",
   },
   title: {
     width: "100%",

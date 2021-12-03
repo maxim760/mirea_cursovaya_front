@@ -4,6 +4,7 @@ import { useTitle } from '../utils/hooks'
 import { useLocalStorageState } from 'ahooks'
 import { StorageKeys } from '../utils/constants'
 import { CharacterListWrapper } from '../components/Characters/CharacterListWrapper'
+import { Template } from '../components'
 export const FavoritesPage = () => {
   useTitle("Любимые")
   const [favorites] = useLocalStorageState(StorageKeys.favorite)
@@ -15,9 +16,11 @@ export const FavoritesPage = () => {
     )
   }
   return (
-    <Box sx={{display: "flex", flexDirection: "column", alignItems: "center" }}>
-      <Typography sx={{my:2, fontSize: 24}} variant="h2">Любимые персонажи 🤩</Typography>
-      <CharacterListWrapper items={favorites} />
-    </Box>
+    <Template>
+      <Box sx={{display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <Typography sx={{my:2, fontSize: 24}} variant="h2">Любимые персонажи 🤩</Typography>
+        <CharacterListWrapper items={favorites} />
+      </Box>
+    </Template>
   )
 }
