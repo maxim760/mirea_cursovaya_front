@@ -27,7 +27,7 @@ export const CharacterListPage = () => {
             {...searchProps}
             reset={resetQuery}
             fullWidth
-            label="Найти персонажа"
+            placeholder="Найти персонажа"
           />
         </Container>
         </AppBar>
