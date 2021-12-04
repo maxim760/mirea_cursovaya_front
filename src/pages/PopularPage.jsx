@@ -32,8 +32,8 @@ export const PopularPage = ({}) => {
         dots={width >= breakpoints.values.sm}
         {...settings}
         arrows={true}
-        prevArrow={<IconButton size="small"><PrevIcon /></IconButton>}
-        nextArrow={<IconButton size="small"><NextIcon /></IconButton>}
+        prevArrow={<IconButton size="small" aria-label="previous slide"><PrevIcon /></IconButton>}
+        nextArrow={<IconButton size="small" aria-label="next-slide"><NextIcon /></IconButton>}
       >
         {PopularCharactersInfo.map(({ title, img, description }) => (
           <Card sx={{display: "flex !important", flexDirection: "column", alignItems: "center",maxWidth: {sm: smallSize * 2,md: midSize * 2, xs: xsSize},  width: "100%"}}>

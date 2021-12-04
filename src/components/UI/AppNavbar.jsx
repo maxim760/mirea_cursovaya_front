@@ -122,7 +122,7 @@ const AppDrawer = () => {
 
   return (
     <>
-      <IconButton color="inherit" onClick={toggleDrawer(true)}>
+      <IconButton color="inherit" onClick={toggleDrawer(true)} aria-label="toggle menu">
         <MenuIcon />
       </IconButton>
       <SwipeableDrawer

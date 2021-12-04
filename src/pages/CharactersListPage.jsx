@@ -23,11 +23,12 @@ export const CharacterListPage = () => {
           >
           <Container>
           <AppSearch
-              sx={{bgcolor: "primary.contrastText"}}
-              {...searchProps}
-              reset={resetQuery}
-              fullWidth
-            />
+            sx={{bgcolor: "primary.contrastText"}}
+            {...searchProps}
+            reset={resetQuery}
+            fullWidth
+            label="Найти персонажа"
+          />
         </Container>
         </AppBar>
       <CharacterList query={searchProps.value} sx={{ mt: OFFSET_TOP + 40 + 'px' }} />

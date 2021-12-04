@@ -22,7 +22,7 @@ export const AppSearch = ({ reset, blurOnClose = false, ...props }) => {
         ),
         endAdornment: (
           <InputAdornment position="end">
-            <IconButton onClick={onReset}>
+            <IconButton onClick={onReset} aria-label="clear text field">
               <CloseIcon />
             </IconButton>
           </InputAdornment>

@@ -50,7 +50,7 @@ export const CharacterListItem = ({ img, name, id, ...gridProps }) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" sx={{ marginLeft: 'auto' }} onClick={onClickCharacter}>
+          <Button size="small" sx={{ marginLeft: 'auto' }} onClick={onClickCharacter} aria-label="more info about character">
             Подробнее
           </Button>
         </CardActions>

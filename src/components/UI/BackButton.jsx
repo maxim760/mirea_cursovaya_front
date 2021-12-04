@@ -6,7 +6,7 @@ export const BackButton = ({size = "middle", color = "default"}) => {
   const {goBack} = useHistory()
   return (
     <Tooltip title="Назад">
-      <IconButton size={size} color={color} onClick={goBack}>
+      <IconButton size={size} color={color} onClick={goBack} aria-label="to back page">
         <BackIcon />
       </IconButton>
     </Tooltip>
