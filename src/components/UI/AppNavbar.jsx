@@ -17,7 +17,7 @@ export const HEADER_HEIGHT = 48
 export const HEADER_HEIGHT_PX = HEADER_HEIGHT + 'px'
 const useStyles = makeStyles((theme) => {
   return {
-    link: {
+    link: { 
       marginLeft: '0',
       padding: `${theme.spacing(1)} ${theme.spacing(1.5)}`,
       borderRadius: '5px',
@@ -149,7 +149,7 @@ export const AppNavbar = ({ }) => {
   return (
     <AppBar position="fixed" sx={{ height: HEADER_HEIGHT_PX }}>
       <Toolbar variant="dense" sx={{ ...flex.between, py: 1 }}>
-          <IconButton onClick={goToCharacters}>
+          <IconButton ariaLabel="go to characters page" onClick={goToCharacters}>
             <DisneyIcon
               width={42}
               height={42}

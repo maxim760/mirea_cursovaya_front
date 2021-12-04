@@ -11,6 +11,7 @@ export const AppSearch = ({ reset, blurOnClose = false, ...props }) => {
   }
   return (
     <TextField
+      name="search"
       type="search"
       inputRef={ref}
       InputProps={{
