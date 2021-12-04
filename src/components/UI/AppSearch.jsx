@@ -26,7 +26,7 @@ export const AppSearch = ({ reset, blurOnClose = false, ...props }) => {
               <CloseIcon />
             </IconButton>
           </InputAdornment>
-        ),
+        ),"aria-label": "search character", name: "search"
       }}
       variant="standard"
       {...props}

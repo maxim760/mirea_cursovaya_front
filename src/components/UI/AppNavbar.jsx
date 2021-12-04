@@ -149,7 +149,7 @@ export const AppNavbar = ({ }) => {
   return (
     <AppBar position="fixed" sx={{ height: HEADER_HEIGHT_PX }}>
       <Toolbar variant="dense" sx={{ ...flex.between, py: 1 }}>
-          <IconButton ariaLabel="go to characters page" onClick={goToCharacters}>
+          <IconButton aria-label="go to characters page" onClick={goToCharacters}>
             <DisneyIcon
               width={42}
               height={42}
