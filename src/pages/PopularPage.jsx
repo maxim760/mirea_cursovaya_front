@@ -28,7 +28,6 @@ export const PopularPage = ({}) => {
       <Box sx={{position: "relative", padding: "10px 0", width: "100%", flexGrow: 1,display: "flex",alignItems:"center"}}>
       <Box sx={{width: "100%"}}>
       <Slider
-        // className={classes.slider}
         dots={width >= breakpoints.values.sm}
         {...settings}
         arrows={true}

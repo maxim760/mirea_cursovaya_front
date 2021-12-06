@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { AppBar, Container } from '@material-ui/core'
 import { useTitle } from '../utils/hooks'
 import { AppSearch, HEADER_HEIGHT, Template } from '../components'
@@ -9,7 +9,9 @@ export const OFFSET_TOP = 8
 export const CharacterListPage = () => {
   const {resetQuery, searchProps} = useCharactersContext()
   useTitle("Персонажи")
-
+  useEffect(() => {
+    console.log("эффект")
+  }, [ ])
   return (
     <Template>
         <AppBar

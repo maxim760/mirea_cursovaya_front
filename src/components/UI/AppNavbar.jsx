@@ -135,17 +135,14 @@ const AppDrawer = () => {
       </SwipeableDrawer>
     </>
   )
-
-
-
 }
 
 export const AppNavbar = ({ }) => {
   const cl = useStyles()
   const { width } = useWindowSize()
-  const isMobile = width < 800
   const history = useHistory()
   const goToCharacters = () => history.push(Routes.Characters)
+  const isMobile = width < 800
   return (
     <AppBar position="fixed" sx={{ height: HEADER_HEIGHT_PX }}>
       <Toolbar variant="dense" sx={{ ...flex.between, py: 1 }}>

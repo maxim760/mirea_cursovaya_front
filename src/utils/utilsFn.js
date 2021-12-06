@@ -14,7 +14,6 @@ export const sx = (classes) => {
   if (Array.isArray(classes)) {
     return classes.filter(Boolean).join(" ")
   }
-  console.log(classes, Object.keys(classes).filter(key => classes[key]).filter(Boolean).join(" "))
   if (typeof classes === "object") {
     return Object.keys(classes).filter(key => classes[key]).filter(Boolean).join(" ")
   }

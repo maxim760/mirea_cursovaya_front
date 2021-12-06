@@ -14,7 +14,7 @@ import { CircularProgress, Typography, Box, Fab, Tooltip } from '@material-ui/co
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import { flex } from '../utils/style/common'
-import { useLocalStorageState } from 'ahooks'
+import { useLocalStorageState, useSafeState } from 'ahooks'
 import { StorageKeys } from '../utils/constants'
 import { useTitle } from '../utils/hooks'
 import { InfoCard } from '../components/InfoCard/InfoCard'
@@ -77,7 +77,7 @@ export const CharacterPage = () => {
   const favoriteTitle = isFavorite ? "Удалить из избранных" : "Добавить в избранные"
   const [item, setItem] = useState(null)
   useTitle(item?.name ? item.name  + " Дисней" : "Дисней")
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useSafeState(true)
   const history = useHistory()
   useEffect(() => {
     (async () => {
@@ -85,6 +85,7 @@ export const CharacterPage = () => {
       try {
         const item = await disneyApi.getOne(id)
         setItem(item)
+        setLoading(false)
       } catch (error) {
         Swal.fire({
           icon: "error",
@@ -92,9 +93,7 @@ export const CharacterPage = () => {
           text: error.message,
         }).then(() => {
           history.push(Routes.Characters)
-        })
-      } finally {
-        setLoading(false)
+        }).finally(() => setLoading(false)) 
       }
     })()
   }, [])
