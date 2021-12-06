@@ -9,9 +9,6 @@ export const OFFSET_TOP = 8
 export const CharacterListPage = () => {
   const {resetQuery, searchProps} = useCharactersContext()
   useTitle("Персонажи")
-  useEffect(() => {
-    console.log("эффект")
-  }, [ ])
   return (
     <Template>
         <AppBar
